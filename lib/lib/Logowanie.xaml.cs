@@ -17,9 +17,18 @@ namespace lib
             InitializeComponent();
         }
 
-        private void Login_Button_Clicked(object sender, EventArgs e)
+        private async void Login_Button_Clicked(object sender, EventArgs e)
         {
 
+
+            var uczniowie = await App.Bazadanych.PobierzUczniowFiltr(Login_Wejscie.Text, Haslo_Wejscie.Text);
+            if (Login_Wejscie.Text.Length != 7 || uczniowie.Count == 0)
+            {
+                DisplayAlert("Blad", "Niepoprawne dane", "OK");
+                
+                
+                return;
+            }
         }
     }
 }
