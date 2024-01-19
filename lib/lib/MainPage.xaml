@@ -10,7 +10,7 @@
         <ContentPage.Content>
             <StackLayout>
                 <Label Text="Oceny ucznia" HorizontalOptions="Center" Margin="0,10,0,0" FontSize="20" TextColor="White"/>
-                <ListView x:Name="LV_UserScores" RowHeight="200" SelectionMode="None">
+                <ListView x:Name="Wyniki" RowHeight="200" SelectionMode="None">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -63,7 +63,7 @@
     <TabbedPage IconImageSource="scoreboard.png" BarBackgroundColor="#3e3e3e" BackgroundColor="#3e3e3e" SelectedTabColor="White" UnselectedTabColor="DimGray">
         <ContentPage Title="Okres 1">
             <ContentPage.Content>
-                <ListView x:Name="LV_UserScores_Period_1" RowHeight="150" SelectionMode="None" Margin="0,10,0,0">
+                <ListView x:Name="Semestr1" RowHeight="150" SelectionMode="None" Margin="0,10,0,0">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -85,7 +85,7 @@
         </ContentPage>
         <ContentPage Title="Okres 2">
             <ContentPage.Content>
-                <ListView x:Name="LV_UserScores_Period_2" RowHeight="150" SelectionMode="None" Margin="0,10,0,0">
+                <ListView x:Name="Semestr2" RowHeight="150" SelectionMode="None" Margin="0,10,0,0">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -112,7 +112,7 @@
                 <Label Text="Dodaj ocene" HorizontalOptions="Center" Margin="0,10,0,0" FontSize="Large" TextColor="White"/>
                 <StackLayout Margin="10,20,10,0">
                     <Label Text="Wyberz kategorie" TextColor="white"/>
-                    <Picker x:Name="P_Subject_name">
+                    <Picker x:Name="Nazwa_przedmiotu">
                         <Picker.Items>
                             <x:String></x:String>
                         </Picker.Items>
@@ -120,7 +120,7 @@
                 </StackLayout>
                 <StackLayout Margin="10,20,10,0">
                     <Label Text="Wyberz ocene" TextColor="white"/>
-                    <Picker x:Name="P_Value">
+                    <Picker x:Name="Ocena_wartosc">
                         <Picker.Items>
                             <x:String></x:String>
                         </Picker.Items>
@@ -128,7 +128,7 @@
                 </StackLayout>
                 <StackLayout Margin="10,20,10,0">
                     <Label Text="Dodaj opis" TextColor="white"/>
-                    <Editor x:Name="E_Description"/>
+                    <Editor x:Name="Opis"/>
                 </StackLayout>
                 <Frame CornerRadius="15" Padding="5">
                     <Button Text="Dodaj ocenę" BackgroundColor="White"/>
