@@ -54,9 +54,9 @@ namespace lib
                 return _database.InsertAsync(wynik);
             }
 
-            public Task<List<Wynik>> PobierzWynik(int user_id, int subject_id, string period)
+            public Task<List<Wynik>> PobierzWynik(int uczen_id, int przedmiot_id, string okres)
             {
-                return _database.QueryAsync<Wynik>("SELECT * FROM Score WHERE User_id=? AND Subject_id=? AND Period=?", user_id, subject_id, period);
+                return _database.QueryAsync<Wynik>("SELECT * FROM Score WHERE User_id=? AND Subject_id=? AND Period=?", uczen_id, przedmiot_id, okres);
             }
         }
     }

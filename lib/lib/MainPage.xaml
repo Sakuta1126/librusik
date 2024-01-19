@@ -60,7 +60,7 @@
 
         </ContentPage.Content>
     </ContentPage>
-    <TabbedPage IconImageSource="scores.png" BarBackgroundColor="#3e3e3e" BackgroundColor="#3e3e3e" SelectedTabColor="White" UnselectedTabColor="DimGray">
+    <TabbedPage IconImageSource="scoreboard.png" BarBackgroundColor="#3e3e3e" BackgroundColor="#3e3e3e" SelectedTabColor="White" UnselectedTabColor="DimGray">
         <ContentPage Title="Okres 1">
             <ContentPage.Content>
                 <ListView x:Name="LV_UserScores_Period_1" RowHeight="150" SelectionMode="None" Margin="0,10,0,0">
