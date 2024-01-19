@@ -26,22 +26,22 @@ namespace lib
 
             public Task<List<Uczen>> PobierzUczniow()
             {
-                return _database.QueryAsync<Uczen>("SELECT * FROM User");
+                return _database.QueryAsync<Uczen>("SELECT * FROM Uczen");
             }
 
             public Task<List<Uczen>> PobierzUczniowFiltr(string login, string haslo)
             {
-                return _database.QueryAsync<Uczen>("SELECT * FROM User WHERE Login=? AND Password=?", login, haslo);
+                return _database.QueryAsync<Uczen>("SELECT * FROM Uczen WHERE Login=? AND Haslo=?", login, haslo);
             }
 
             public Task<List<Przedmiot>> PobierzPrzedmioty()
             {
-                return _database.QueryAsync<Przedmiot>("SELECT * FROM Subject");
+                return _database.QueryAsync<Przedmiot>("SELECT * FROM Przedmiot");
             }
 
             public Task<List<Wynik>> PobierzWyniki()
             {
-                return _database.QueryAsync<Wynik>("SELECT * FROM Score");
+                return _database.QueryAsync<Wynik>("SELECT * FROM Wynik");
             }
 
             public Task<int> DodajPrzedmiot(Przedmiot przedmiot)
@@ -56,7 +56,7 @@ namespace lib
 
             public Task<List<Wynik>> PobierzWynik(int uczen_id, int przedmiot_id, string okres)
             {
-                return _database.QueryAsync<Wynik>("SELECT * FROM Score WHERE User_id=? AND Subject_id=? AND Period=?", uczen_id, przedmiot_id, okres);
+                return _database.QueryAsync<Wynik>("SELECT * FROM Wynik WHERE Uczen_id=? AND Przedmiot_id=? AND Okres=?", uczen_id, przedmiot_id, okres);
             }
         }
     }

@@ -17,40 +17,14 @@ namespace lib
         public MainPage(Uczen uczen)
         {
             InitializeComponent();
+           
             this.uczen = uczen;
-
+            ZaladujDane();
         }
 
-        public async void dodaj()
-        {
-            //User x = new User()
-            //{
-            //    Name = "Marcin",
-            //    Surname = "Gawron",
-            //    Login = "000001n",
-            //    Password = "admin123",
-            //    IsTeacher = true
-            //};
-            //await App.Database.InsertUser(x);
-            //Subject sbj = new Subject()
-            //{
-            //    Name = "Programowanie"
-            //};
-            //await App.Database.InsertSubject(sbj);
-            //Score s = new Score()
-            //{
-            //    User_id = 1,
-            //    Subject_id = 1,
-            //    Subject_name = "Programowanie",
-            //    Value = "5+",
-            //    Date = DateTime.Now,
-            //    Description = "Sprawdzian",
-            //    Period = "Okres 1"
-            //};
-            //await App.Database.InsertScore(s);
-        }
+        
 
-        public async void UploadData()
+        public async void ZaladujDane()
         {
             Wyniki.ItemsSource = await App.Bazadanych.PobierzWyniki();
 

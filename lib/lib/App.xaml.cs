@@ -16,7 +16,7 @@ namespace lib
             {
                 if (bazadanych == null)
                 {
-                    bazadanych = new BazaDanych(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "librus.db3"));
+                    bazadanych = new BazaDanych(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "lib.db3"));
                 }
                 return bazadanych;
             }

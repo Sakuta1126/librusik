@@ -29,7 +29,7 @@
                                             <Image Source="user.png"/>
                                         </Frame>
                                         <StackLayout Grid.Column="1" Orientation="Horizontal">
-                                            <Label Text="{Binding Date,StringFormat='{{}{0:dd.MM.yyyy}'}" TextColor="White"/>
+                                            <Label Text="{Binding Data,StringFormat='{{}{0:dd.MM.yyyy}'}" TextColor="White"/>
                                         </StackLayout>
                                         <Label Text="Dodano ocenę" Grid.Row="1" Grid.Column="1" TextColor="White"/>
                                         <Frame Grid.Row="2" Grid.Column="1" BackgroundColor="#3e3e3e" CornerRadius="15" Padding="5" Margin="10">
@@ -39,15 +39,15 @@
                                                     <RowDefinition/>
                                                 </Grid.RowDefinitions>
                                                 <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="20"/>
+                                                    <ColumnDefinition Width="60"/>
                                                     <ColumnDefinition/>
                                                 </Grid.ColumnDefinitions>
-                                                <Label Text="{Binding Value}" Grid.RowSpan="2" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="40"/>
+                                                <Label Text="{Binding wartosc}" Grid.RowSpan="2" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="40"/>
                                                 <StackLayout Orientation="Horizontal" Grid.Column="1">
-                                                    <Label Text="{Binding Subejct_name}" TextColor="White"/>
-                                                    <Label Text="{Binding Date, StringFormat='{{}{0:dd.MM}'}" TextColor="White"/>
+                                                    <Label Text="{Binding Przedmiot_nazwa}" TextColor="White"/>
+                                                    <Label Text="{Binding Data, StringFormat='{{}{0:dd.MM}'}" TextColor="White"/>
                                                 </StackLayout>
-                                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Description}" MaxLines="1" LineBreakMode="TailTruncation" TextColor="White"/>
+                                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Opis}" MaxLines="1" LineBreakMode="TailTruncation" TextColor="White"/>
                                             </Grid>
                                         </Frame>
                                     </Grid>
