@@ -16,5 +16,10 @@ namespace lib
         {
             InitializeComponent();
         }
+
+        private void Login_Button_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

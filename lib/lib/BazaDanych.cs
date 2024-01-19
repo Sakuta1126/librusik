@@ -19,42 +19,42 @@ namespace lib
                 _database.CreateTableAsync<Przedmiot>().Wait();
             }
 
-            public Task<int> InsertUser(Uczen uczen)
+            public Task<int> DodajUcznia(Uczen uczen)
             {
                 return _database.InsertAsync(uczen);
             }
 
-            public Task<List<Uczen>> GetUsers()
+            public Task<List<Uczen>> PobierzUczniow()
             {
                 return _database.QueryAsync<Uczen>("SELECT * FROM User");
             }
 
-            public Task<List<Uczen>> GetUserFilter(string login, string password)
+            public Task<List<Uczen>> PobierzUczniowFiltr(string login, string haslo)
             {
-                return _database.QueryAsync<Uczen>("SELECT * FROM User WHERE Login=? AND Password=?", login, password);
+                return _database.QueryAsync<Uczen>("SELECT * FROM User WHERE Login=? AND Password=?", login, haslo);
             }
 
-            public Task<List<Przedmiot>> GetSubjects()
+            public Task<List<Przedmiot>> PobierzPrzedmioty()
             {
                 return _database.QueryAsync<Przedmiot>("SELECT * FROM Subject");
             }
 
-            public Task<List<Wynik>> GetScories()
+            public Task<List<Wynik>> PobierzWyniki()
             {
                 return _database.QueryAsync<Wynik>("SELECT * FROM Score");
             }
 
-            public Task<int> InsertSubject(Przedmiot przedmiot)
+            public Task<int> DodajPrzedmiot(Przedmiot przedmiot)
             {
                 return _database.InsertAsync(przedmiot);
             }
 
-            public Task<int> InsertScore(Wynik wynik)
+            public Task<int> DodajWynik(Wynik wynik)
             {
                 return _database.InsertAsync(wynik);
             }
 
-            public Task<List<Wynik>> GetScories(int user_id, int subject_id, string period)
+            public Task<List<Wynik>> PobierzWynik(int user_id, int subject_id, string period)
             {
                 return _database.QueryAsync<Wynik>("SELECT * FROM Score WHERE User_id=? AND Subject_id=? AND Period=?", user_id, subject_id, period);
             }
