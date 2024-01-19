@@ -1,16 +1,31 @@
 ﻿using System;
+using System.IO;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using static lib.BazaDanych;
 
 namespace lib
 {
     public partial class App : Application
     {
+        static BazaDanych bazadanych;
+
+        public static BazaDanych Bazadanych
+        {
+            get
+            {
+                if (bazadanych == null)
+                {
+                    bazadanych = new BazaDanych(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "librus.db3"));
+                }
+                return bazadanych;
+            }
+        }
         public App()
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new Logowanie());
         }
 
         protected override void OnStart()
