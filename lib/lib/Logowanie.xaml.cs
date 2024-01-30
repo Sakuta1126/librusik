@@ -58,7 +58,8 @@ namespace lib
 
             if (uczniowie != null && uczniowie.Haslo == password)
             {
-                Navigation.PushAsync(new MainPage(uczniowie));
+                ZalogowanyUczen.ZalogowanyUzytkownik=uczniowie;
+                    Navigation.PushAsync(new MainPage());
             }
             else
                 {
@@ -72,6 +73,11 @@ namespace lib
             }
                 
 
+        }
+
+        private void Regnav_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Rejestracja());
         }
     }
 }

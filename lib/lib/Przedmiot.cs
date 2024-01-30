@@ -11,7 +11,7 @@ namespace lib
         public int Przedmiot_id { get; set; }
         public int Uczen_id { get; set; }
         public string Przedmiot_nazwa { get; set; }
-        public string Wartosc { get; set; }
+        public string Ocena { get; set; }
         public DateTime Data { get; set; }
         public string Opis { get; set; }
         public string Okres { get; set; }

@@ -9,6 +9,8 @@
             <Label Text="Haslo:" TextColor="White" FontSize="25" HorizontalTextAlignment="Center"/>
             <Entry x:Name="Haslo_Wejscie" IsPassword="True" TextColor="LightGray" WidthRequest="200"/>
             <Button x:Name="Login_Button" Clicked="Login_Button_Clicked" Text="ZALOGUJ" BackgroundColor="CadetBlue"/>
+            <Label Text="Nie masz konta?" TextColor="White" FontSize="20" HorizontalTextAlignment="Center"/>
+            <Button x:Name="Regnav" Clicked="Regnav_Clicked" Text="Rejestruj" BackgroundColor="CadetBlue"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
