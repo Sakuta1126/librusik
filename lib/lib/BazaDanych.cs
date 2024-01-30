@@ -19,45 +19,22 @@ namespace lib
                 _database.CreateTableAsync<Przedmiot>().Wait();
             }
 
-            public Task<int> DodajUcznia(Uczen uczen)
-            {
-                return _database.InsertAsync(uczen);
-            }
+          public Task<int> Dodaj<T>(T item)
+        {
+            return _database.InsertAsync(item);
+        }
 
-            public Task<List<Uczen>> PobierzUczniow()
-            {
-                return _database.QueryAsync<Uczen>("SELECT * FROM Uczen");
-            }
+           
 
-            public Task<List<Uczen>> PobierzUczniowFiltr(string login, string haslo)
-            {
-                return _database.QueryAsync<Uczen>("SELECT * FROM Uczen WHERE Login=? AND Haslo=?", login, haslo);
-            }
+        public Task<List<T>> Pobierz<T>() where T : new()
+        {
+            return _database.Table<T>().ToListAsync();
+        }
 
-            public Task<List<Przedmiot>> PobierzPrzedmioty()
-            {
-                return _database.QueryAsync<Przedmiot>("SELECT * FROM Przedmiot");
-            }
+           
 
-            public Task<List<Wynik>> PobierzWyniki()
-            {
-                return _database.QueryAsync<Wynik>("SELECT * FROM Wynik");
-            }
 
-            public Task<int> DodajPrzedmiot(Przedmiot przedmiot)
-            {
-                return _database.InsertAsync(przedmiot);
-            }
-
-            public Task<int> DodajWynik(Wynik wynik)
-            {
-                return _database.InsertAsync(wynik);
-            }
-
-            public Task<List<Wynik>> PobierzWynik(int uczen_id, int przedmiot_id, string okres)
-            {
-                return _database.QueryAsync<Wynik>("SELECT * FROM Wynik WHERE Uczen_id=? AND Przedmiot_id=? AND Okres=?", uczen_id, przedmiot_id, okres);
-            }
+            
         }
     }
 

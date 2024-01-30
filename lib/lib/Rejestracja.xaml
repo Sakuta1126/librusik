@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" NavigationPage.HasNavigationBar="False" BackgroundColor="#3e3e3e"
+             x:Class="lib.Rejestracja">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Margin="15,25,15,0">
+                <Label Text="Login:" TextColor="White" FontSize="25" HorizontalTextAlignment="Center"/>
+                <Entry x:Name="Login_Wejscie" TextColor="LightGray" WidthRequest="200"/>
+                <Label Text="Haslo:" TextColor="White" FontSize="25" HorizontalTextAlignment="Center"/>
+                <Entry x:Name="Haslo_Wejscie" IsPassword="True" TextColor="LightGray" WidthRequest="200"/>
+                <Button x:Name="RegisterBtn" Clicked="RegisterBtn_Clicked" Text="ZAREJESTRUJ" BackgroundColor="CadetBlue"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

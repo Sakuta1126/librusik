@@ -25,7 +25,7 @@ namespace lib
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Logowanie());
+            MainPage = new NavigationPage(new Rejestracja());
         }
 
         protected override void OnStart()
