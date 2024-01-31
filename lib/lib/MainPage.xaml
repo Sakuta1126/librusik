@@ -44,7 +44,7 @@
                                                 </Grid.ColumnDefinitions>
                                                 <Label Text="{Binding ocena}" Grid.RowSpan="2" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="40"/>
                                                 <StackLayout Orientation="Horizontal" Grid.Column="1">
-                                                    <Label Text="{Binding Przedmiot_nazwa}" TextColor="White"/>
+                                                    <Label Text="{Binding przedmiot_nazwa}" TextColor="White"/>
                                                     <Label Text="{Binding Data, StringFormat='{{}{0:dd.MM}'}" TextColor="White"/>
                                                 </StackLayout>
                                                 <Label Grid.Row="1" Grid.Column="1" Text="{Binding Opis}" MaxLines="1" LineBreakMode="TailTruncation" TextColor="White"/>
@@ -73,8 +73,8 @@
                                             <RowDefinition Height="30"/>
                                             <RowDefinition Height="auto"/>
                                         </Grid.RowDefinitions>
-                                        <Label Text="{Binding [0]}" LineBreakMode="TailTruncation" MaxLines="1" FontSize="20" VerticalOptions="Center" TextColor="White"/>
-                                        <Label Text="{Binding [1]}" Grid.Row="1" TextColor="white" VerticalOptions="Center"/>
+                                        <Label Text="{Binding przedmiot_nazwa}" LineBreakMode="TailTruncation" MaxLines="1" FontSize="20" VerticalOptions="Center" TextColor="White"/>
+                                        <Label Text="{Binding ocena}" Grid.Row="1" TextColor="white" VerticalOptions="Center"/>
                                     </Grid>
                                 </Frame>
                             </ViewCell>
@@ -95,8 +95,8 @@
                                             <RowDefinition Height="30"/>
                                             <RowDefinition Height="auto"/>
                                         </Grid.RowDefinitions>
-                                        <Label Text="{Binding [0]}" LineBreakMode="TailTruncation" MaxLines="1" TextColor="White"/>
-                                        <Label Text="{Binding [1]}" Grid.Row="1" TextColor="white"/>
+                                        <Label Text="{Binding przedmiot_nazwa}" LineBreakMode="TailTruncation" MaxLines="1" TextColor="White" FontSize="20" VerticalOptions="Center"/>
+                                        <Label Text="{Binding ocena}" Grid.Row="1" TextColor="white" VerticalOptions="Center"/>
                                     </Grid>
                                 </Frame>
                             </ViewCell>
@@ -111,15 +111,15 @@
             <StackLayout>
                 <Label Text="Dodaj ocene" HorizontalOptions="Center" Margin="0,10,0,0" FontSize="Large" TextColor="White"/>
                 <StackLayout Margin="10,20,10,0">
-                    <Label Text="Wyberz kategorie" TextColor="white"/>
+                    <Label Text="Przedmiot" TextColor="white"/>
                     <Entry x:Name="Nazwa_przedmiotu"></Entry>
                 </StackLayout>
                 <StackLayout Margin="10,20,10,0">
-                    <Label Text="Wyberz ocene" TextColor="white"/>
+                    <Label Text="Ocena " TextColor="white"/>
                     <Entry x:Name="Ocena_wartosc"></Entry>
                 </StackLayout>
                 <StackLayout Margin="10,20,10,0">
-                    <Label Text="Dodaj opis" TextColor="white"/>
+                    <Label Text="Opis" TextColor="white"/>
                     <Entry x:Name="Opis"/>
                 </StackLayout>
                 <Frame CornerRadius="15" Padding="5">

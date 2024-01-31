@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -26,7 +25,7 @@ namespace lib
             {
                 DisplayAlert("Blad", "Pola nie moga byc puste", "OK");
             }
-           else if (existingUser==null &&  Login_Wejscie.Text.Length == 7 && Haslo_Wejscie.Text != string.Empty)
+           else if (existingUser==null  && Haslo_Wejscie.Text != string.Empty)
             {
                 var newUser = new Uczen { Login = login, Haslo = password};
                 App.Bazadanych.Dodaj(newUser);

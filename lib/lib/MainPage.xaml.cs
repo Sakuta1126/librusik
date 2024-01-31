@@ -36,7 +36,25 @@ namespace lib
 
 
             Wyniki.ItemsSource = wynikiUcznia;
-        }
+            
+            var ocenyUcznia = await App.Bazadanych.Pobierz<Wynik>();
+            var ocenyUczniaZalogowanego = ocenyUcznia
+                .Where(o => o.uczen_id == ZalogowanyUczen.ZalogowanyUzytkownik.Uczen_id)
+                .ToList();
+
+           
+            var ocenyOkres1 = ocenyUczniaZalogowanego
+                .Where(o => o.Okres.Contains("Okres 1"))
+                .ToList();
+            var ocenyOkres2 = ocenyUczniaZalogowanego
+                .Where(o => o.Okres.Contains("Okres 2"))
+                .ToList();
+
+          
+            Semestr1.ItemsSource = ocenyOkres1;
+            Semestr2.ItemsSource = ocenyOkres2;
+      
+    }
 
 
         private async void Dodaj_Clicked(object sender, EventArgs e)
@@ -55,7 +73,7 @@ namespace lib
                     ocena = ocenaWartosc,
                     Data = DateTime.Now,
                     Opis = opis,
-                    Okres = "Okres 1"
+                    Okres = "Okres 2"
                 };
 
 
@@ -65,7 +83,7 @@ namespace lib
                 if (wynikOperacji > 0)
                 {
                     await DisplayAlert("Sukces", "Ocena została dodana.", "OK");
-                    
+                    OnAppearing();
                 }
                 else
                 {
